@@ -82,7 +82,7 @@ h1{
     box-shadow: none !important;
   }
   body{
-    background-image: url("../img/back.jpg");
-    background-size: auto 100%;
+    background-image: url("../img/back90.jpg");
+    background-size: cover;
   }
 }
