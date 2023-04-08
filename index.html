@@ -11,36 +11,53 @@
 </head>
 <body>
 
+<div class="container w-75 mx-auto mt-5 bg-success p-4 rounded-5 shadow">
+
+    <h1>Игра в кости</h1>
+    <h3>Правила</h3>
+    <p id="rules">Первым бросает кости компьютер. Затем ваш ход.
+        Вы можете перебросить одну или несколько костей (или одну несколько раз),
+        на это есть три попытки. Если на ваших костях выпадет комбинация 1-2-3 (в любом порядке),
+        вы автоматически проигрываете. Если выпадает комбинация 4-5-6 - автоматически выигрываете.</p>
+    <h3>Удачи!</h3>
     <div>
         <button id="start">Начать игру</button>
     </div>
 
-    <div id="buttons" class="wrap">
         <button id="make_move">Бросить кубики</button>
-        <button id="change1">Перебросить №1</button>
-        <button id="change2">Перебросить №2</button>
-        <button id="change3">Перебросить №3</button>
-    </div>
 
-    <div id="cubes" class="wrap">
-        <div>
-            <img id="dice1" src="img/dice1.png" alt="Кубик 1">
-            <img id="dice2" src="img/dice1.png" alt="Кубик 2">
-            <img id="dice3" src="img/dice1.png" alt="Кубик 3">
+    <div id="gamer_wrap" class="wrap">
+        <div class="rounded bg-warning p-1 mb-2 text-dark text-center text">Ваши кубики</div>
+        <div id="dices">
+
+            <div>
+                <img id="dice1" src="img/dice1.png" alt="Кубик 1"><br>
+                <button class="mt-2" id="change1">Перебросить</button>
+            </div>
+            <div>
+                <img id="dice2" src="img/dice1.png" alt="Кубик 2"><br>
+                <button class="mt-2" id="change2">Перебросить</button>
+            </div>
+            <div>
+                <img id="dice3" src="img/dice1.png" alt="Кубик 3"><br>
+                <button class="mt-2" id="change3">Перебросить</button>
+            </div>
         </div>
-        <h2 id="result">Ваш результат</h2>
+        <h2 id="result">Ваш результат: 0</h2>
         <button id="end_move">Конец хода</button>
     </div>
 
     <div id="computer" class="wrap">
-        <div>
+        <div class="rounded bg-warning p-1 mb-2 text-dark text-center text">Кубики компьютера</div>
+        <div class="mx-auto">
             <img id="comp_dice1" src="img/dice1.png" alt="Кубик 1">
             <img id="comp_dice2" src="img/dice1.png" alt="Кубик 2">
             <img id="comp_dice3" src="img/dice1.png" alt="Кубик 3">
         </div>
-        <h2 id="comp_result">Результат компьютера</h2>
-        <h2 id="move_result">Результат хода</h2>
+        <h2 id="comp_result" class="mt-5">Результат компьютера: 0</h2>
+        <h1 id="move_result"></h1>
     </div>
+</div>
 
 
 
