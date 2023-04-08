@@ -69,9 +69,20 @@ h1{
     width: 100%;
   }
   button{
-    padding: 35px 0px;
+    padding: 35px 15px;
   }
   body{
     font-size: x-large;
+  }
+  #change1, #change2, #change3{
+    font-size: medium;
+  }
+  .main_wrap {
+    background-image: none;
+    box-shadow: none !important;
+  }
+  body{
+    background-image: url("../img/back.jpg");
+    background-size: auto 100%;
   }
 }
