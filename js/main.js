@@ -132,9 +132,18 @@ function change_dice(i) {
 function end_move() {
     if (move_maked & comp_move_maked & !game_ended || auto_fail || auto_win) {
         if ((result > comp_result) & !auto_fail || auto_win) {
-            $('#move_result').text('Вы выиграли!')
+            let text = 'Вы выиграли!'
+            if (auto_win) {
+                text+=' (выпала комбинация 4-5-6)'
+            }
+            $('#move_result').text(text)
+            $('#move_result').text(text)
         } else if ((result < comp_result) || auto_fail) {
-            $('#move_result').text('Вы проиграли')
+            let text = 'Вы проиграли'
+            if (auto_fail) {
+                text+=' (выпала комбинация 1-2-3)'
+            }
+            $('#move_result').text(text)
         } else {
             $('#move_result').text('Ничья')
         }
