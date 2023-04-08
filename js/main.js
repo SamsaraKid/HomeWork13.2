@@ -119,7 +119,7 @@ function change_dice(i) {
             case 3: dice3 = dice_random(); break;
         }
         result = dice1+dice2+dice3
-        $('#result').text('Ваш результат: ' + (result))
+        $('#result').text('Результат: ' + (result))
         dice_img()
         auto_check()
         change_counter++
