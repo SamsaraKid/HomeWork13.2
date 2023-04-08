@@ -1,0 +1,15 @@
+.wrap{
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top;
+}
+
+#buttons{
+  flex-direction: column;
+}
+
+#cubes img{
+  width: 100px;
+  height: 100px;
+}
+
