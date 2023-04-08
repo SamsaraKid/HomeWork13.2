@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 
-#cubes img{
+#cubes img, #computer img{
   width: 100px;
   height: 100px;
 }

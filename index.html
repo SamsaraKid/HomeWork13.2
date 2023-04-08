@@ -11,11 +11,15 @@
 </head>
 <body>
 
+    <div>
+        <button id="start">Начать игру</button>
+    </div>
+
     <div id="buttons" class="wrap">
         <button id="make_move">Бросить кубики</button>
-        <button id="change_1">Перебросить №1</button>
-        <button id="change_2">Перебросить №2</button>
-        <button id="change_3">Перебросить №3</button>
+        <button id="change1">Перебросить №1</button>
+        <button id="change2">Перебросить №2</button>
+        <button id="change3">Перебросить №3</button>
     </div>
 
     <div id="cubes" class="wrap">
@@ -24,11 +28,16 @@
             <img id="dice2" src="img/dice1.png" alt="Кубик 2">
             <img id="dice3" src="img/dice1.png" alt="Кубик 3">
         </div>
+        <h2 id="result">Ваш результат</h2>
         <button id="end_move">Конец хода</button>
     </div>
 
-    <div id="computer"class="wrap">
-        <h1 id="move_number">Ход №0</h1>
+    <div id="computer" class="wrap">
+        <div>
+            <img id="comp_dice1" src="img/dice1.png" alt="Кубик 1">
+            <img id="comp_dice2" src="img/dice1.png" alt="Кубик 2">
+            <img id="comp_dice3" src="img/dice1.png" alt="Кубик 3">
+        </div>
         <h2 id="comp_result">Результат компьютера</h2>
         <h2 id="move_result">Результат хода</h2>
     </div>
