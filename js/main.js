@@ -54,6 +54,27 @@ function auto_check(){
     }
 }
 
+function button_coloring() {
+    if (comp_move_maked) {
+        $('#start').attr('class','w-100 button_inactive')
+        $('#make_move').attr('class','w-100 button_active')
+    }
+    if (move_maked) {
+        $('#make_move').attr('class','w-100 button_inactive')
+        $('#end_move').attr('class','w-100 button_active')
+        $('#change1').attr('class','mt-2 button_active')
+        $('#change2').attr('class','mt-2 button_active')
+        $('#change3').attr('class','mt-2 button_active')
+    }
+    if (game_ended) {
+        $('#start').attr('class','w-100 button_active')
+        $('#end_move').attr('class','w-100 button_inactive')
+        $('#change1').attr('class','mt-2 button_inactive')
+        $('#change2').attr('class','mt-2 button_inactive')
+        $('#change3').attr('class','mt-2 button_inactive')
+    }
+}
+
 function make_move() {
     if (!move_maked & comp_move_maked) {
         dice1 = dice_random()
@@ -64,6 +85,7 @@ function make_move() {
         $('#result').text('Результат: ' + (result))
         dice_img()
         auto_check()
+        button_coloring()
     }
 }
 
@@ -76,6 +98,7 @@ function comp_make_move() {
         comp_move_maked = true
         $('#comp_result').text('Результат: ' + (comp_result))
         dice_img()
+        button_coloring()
     }
 }
 
@@ -117,6 +140,7 @@ function end_move() {
         }
         $('#start').text('Начать заново')
         game_ended = true
+        button_coloring()
     }
 }
 

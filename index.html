@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div class="mx-auto mt-2 p-4 rounded-5 shadow main_wrap">
+<div class="mx-auto mt-1 p-4 rounded-5 shadow main_wrap">
 
     <h1 class="text-center">Игра в кости</h1>
     <h3>Правила</h3>
@@ -21,15 +21,15 @@
         вы автоматически проигрываете. Если выпадает комбинация 4-5-6 - автоматически выигрываете.</p>
     <h3 class="text-center">Удачи!</h3>
     <div class="w-50 mx-auto">
-        <button class="w-100" id="start">Начать игру</button>
+        <button class="w-100 button_active" id="start">Начать игру</button>
     </div>
 
     <div class="mx-auto row my-3">
         <div class="col-6">
-            <button class="w-100" id="make_move">Бросить кубики</button>
+            <button class="w-100 button_inactive" id="make_move">Бросить кубики</button>
         </div>
         <div class="col-6">
-            <button class="w-100" id="end_move">Конец хода</button>
+            <button class="w-100 button_inactive" id="end_move">Конец хода</button>
         </div>
     </div>
 
@@ -40,13 +40,13 @@
             <div>
                 <div class="dice_div">
                     <img id="dice1" src="img/dice1.png" alt="Кубик 1">
-                    <button class="mt-2" id="change1">Перебросить</button>
+                    <button class="mt-2 button_inactive" id="change1">Перебросить</button>
                 </div><div class="dice_div">
                     <img id="dice2" src="img/dice1.png" alt="Кубик 2">
-                    <button class="mt-2" id="change2">Перебросить</button>
+                    <button class="mt-2 button_inactive" id="change2">Перебросить</button>
             </div><div class="dice_div">
                     <img id="dice3" src="img/dice1.png" alt="Кубик 3">
-                    <button class="mt-2" id="change3">Перебросить</button>
+                    <button class="mt-2 button_inactive" id="change3">Перебросить</button>
                 </div>
             </div>
         </div>
