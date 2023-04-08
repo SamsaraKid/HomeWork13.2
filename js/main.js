@@ -137,7 +137,6 @@ function end_move() {
                 text+=' (выпала комбинация 4-5-6)'
             }
             $('#move_result').text(text)
-            $('#move_result').text(text)
         } else if ((result < comp_result) || auto_fail) {
             let text = 'Вы проиграли'
             if (auto_fail) {
