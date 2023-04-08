@@ -15,10 +15,12 @@ let comp_result = 0
 let auto_fail = false
 let auto_win = false
 
+//Генерация случайных чисел
 function dice_random() {
     return(Math.floor(Math.random() * (Math.abs(max - min) + 1)) + min)
 }
 
+//Инициализация игры
 function start() {
     if (game_ended) {
         dice1 = 1
@@ -42,6 +44,7 @@ function start() {
     comp_make_move()
 }
 
+//Проверка на автовыигрыш и автопроигрыш по комбинациям костей
 function auto_check(){
     let text_result = String(dice1)+String(dice2)+String(dice3)
     if (text_result.match(/123|132|213|231|312|321/) != null) {
@@ -54,6 +57,7 @@ function auto_check(){
     }
 }
 
+//Окрашивание активных клавиш в зависимости от стадии игры
 function button_coloring() {
     if (comp_move_maked) {
         $('#start').attr('class','w-100 button_inactive')
@@ -75,6 +79,7 @@ function button_coloring() {
     }
 }
 
+//Ход игрока
 function make_move() {
     if (!move_maked & comp_move_maked) {
         dice1 = dice_random()
@@ -89,6 +94,7 @@ function make_move() {
     }
 }
 
+//Ход компьютера
 function comp_make_move() {
     if (!comp_move_maked) {
         comp_dice1 = dice_random()
@@ -102,6 +108,7 @@ function comp_make_move() {
     }
 }
 
+//Выставление картинок костей
 function dice_img() {
     $('#dice1').attr('src', 'img/dice' + dice1 + '.png');
     $('#dice2').attr('src', 'img/dice' + dice2 + '.png');
@@ -111,6 +118,7 @@ function dice_img() {
     $('#comp_dice3').attr('src', 'img/dice' + comp_dice3 + '.png');
 }
 
+//Переброс костей
 function change_dice(i) {
     if ((change_counter < 3) & move_maked & comp_move_maked & !game_ended) {
         switch(i) {
@@ -129,6 +137,7 @@ function change_dice(i) {
     }
 }
 
+//Окончание игры
 function end_move() {
     if (move_maked & comp_move_maked & !game_ended || auto_fail || auto_win) {
         if ((result > comp_result) & !auto_fail || auto_win) {
@@ -152,6 +161,7 @@ function end_move() {
     }
 }
 
+//Обработка кнопок
 $('#start').click(start)
 $('#make_move').click(make_move)
 $('#change1').click(function (){change_dice(1)})
