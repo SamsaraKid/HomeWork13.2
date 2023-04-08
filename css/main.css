@@ -5,21 +5,22 @@ body{
 
 .container{
   min-height: 550px;
+  background-image: url("../img/back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 button{
   display: inline-block;
-  padding: 5px 10px;
+  padding: 15px 10px;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  /*outline: none;*/
   color: #d5d500;
   background-color: #5959ff;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
-  /*min-width: 160px;*/
 }
 
 button:hover {
@@ -32,30 +33,24 @@ button:active {
   transform: translateY(4px);
 }
 
-.wrap{
-  display: inline-flex;
-  flex-direction: column;
-  vertical-align: top;
-}
-
-#gamer_wrap img, #computer img{
+#gamer img, #computer img{
   width: 100px;
   height: 100px;
-}
-
-#dices{
-  display: inline-flex;
 }
 
 #rules{
   text-align: justify;
 }
 
-#dices{
-  text-align: center;
+.dice_div{
+  display: inline-flex;
+  flex-direction: column;
+  width: 33%;
+  align-items: center;
 }
 
-#computer img{
-  margin: 0 1.5%;
+h1{
+  height: 48px;
 }
+
 

@@ -33,9 +33,9 @@ function start() {
         game_ended = false
         result = 0
         comp_result = 0
-        let auto_fail = false
-        let auto_win = false
-        $('#result').text('Ваш результат: ')
+        auto_fail = false
+        auto_win = false
+        $('#result').text('')
         $('#move_result').text('')
     }
     $('#start').text('Игра начата')
@@ -61,7 +61,7 @@ function make_move() {
         dice3 = dice_random()
         result = dice1+dice2+dice3
         move_maked = true
-        $('#result').text('Ваш результат: ' + (result))
+        $('#result').text('Результат: ' + (result))
         dice_img()
         auto_check()
     }
@@ -74,7 +74,7 @@ function comp_make_move() {
         comp_dice3 = dice_random()
         comp_result = comp_dice1+comp_dice2+comp_dice3
         comp_move_maked = true
-        $('#comp_result').text('Результат компьютера: ' + (comp_result))
+        $('#comp_result').text('Результат: ' + (comp_result))
         dice_img()
     }
 }
