@@ -20,8 +20,43 @@
         на это есть три попытки. Если на ваших костях выпадет комбинация 1-2-3 (в любом порядке),
         вы автоматически проигрываете. Если выпадает комбинация 4-5-6 - автоматически выигрываете.</p>
     <h3 class="text-center">Удачи!</h3>
+
+    <div class="row">
+        <div class="col-4 text-center">
+            <h3>Ваш счёт</h3>
+        </div>
+        <div class="col-4 text-center">
+            <h3>Банк</h3>
+        </div>
+        <div class="col-4 text-center">
+            <h3>Счёт компьютера</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 text-center">
+            <h2 id="gamer_money">100</h2>
+            <p id="ask_for_bet1">Сделайте ставку</p>
+        </div>
+        <div class="col-4 text-center">
+            <h2 id="bank">0</h2>
+        </div>
+        <div class="col-4 text-center">
+            <h2 id="comp_money">100</h2>
+            <p id="ask_for_bet2">Ожидание ставки игрока</p>
+        </div>
+    </div>
+
+    <div class="text-center bet_wrap mb-3">
+        <button class="button_active" id="bet1">5</button>
+        <button class="button_active" id="bet2">10</button>
+        <button class="button_active" id="bet3">Ва-Банк</button>
+        <input type="number" class="h-100 text-center" id="bet" placeholder="Ручной ввод">
+        <button class="button_active" id="make_bet">Поставить</button>
+    </div>
+
     <div class="w-50 mx-auto">
-        <button class="w-100 button_active" id="start">Начать игру</button>
+        <button class="w-100 button_inactive" id="start">Начать игру</button>
     </div>
 
     <div class="mx-auto row my-3">

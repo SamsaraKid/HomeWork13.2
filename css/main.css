@@ -65,6 +65,19 @@ h1{
   height: 48px;
 }
 
+
+.bet_wrap{
+  height: 54px;
+}
+.bet_wrap button {
+  width: 140px;
+}
+#bet{
+  height: 100%;
+  border-radius: 15px;
+}
+
+
 @media (max-width: 1080px){
   .main_wrap{
     width: 100%;
@@ -86,4 +99,12 @@ h1{
     background-image: url("../img/back90.jpg");
     background-size: cover;
   }
+  .bet_wrap{
+    height: 106px;
+  }
 }
+
+input:invalid {
+    background-color: rgb(255, 87, 127);
+}
+
