@@ -14,6 +14,12 @@ let result = 0
 let comp_result = 0
 let auto_fail = false
 let auto_win = false
+let gamer_money = 100
+let comp_money = 100
+let bank = 0
+const bet1 = 5
+const bet2 = 10
+let bet_maked = false
 
 //Генерация случайных чисел
 function dice_random() {
@@ -22,26 +28,28 @@ function dice_random() {
 
 //Инициализация игры
 function start() {
-    if (game_ended) {
-        dice1 = 1
-        dice2 = 1
-        dice3 = 1
-        comp_dice1 = 1
-        comp_dice2 = 1
-        comp_dice3 = 1
-        change_counter = 0
-        move_maked = false
-        comp_move_maked = false
-        game_ended = false
-        result = 0
-        comp_result = 0
-        auto_fail = false
-        auto_win = false
-        $('#result').text('')
-        $('#move_result').text('')
+    if (bet_maked) {
+        if (game_ended) {
+            dice1 = 1
+            dice2 = 1
+            dice3 = 1
+            comp_dice1 = 1
+            comp_dice2 = 1
+            comp_dice3 = 1
+            change_counter = 0
+            move_maked = false
+            comp_move_maked = false
+            game_ended = false
+            result = 0
+            comp_result = 0
+            auto_fail = false
+            auto_win = false
+            $('#result').text('')
+            $('#move_result').text('')
+        }
+        $('#start').text('Игра начата')
+        comp_make_move()
     }
-    $('#start').text('Игра начата')
-    comp_make_move()
 }
 
 //Проверка на автовыигрыш и автопроигрыш по комбинациям костей
@@ -59,6 +67,13 @@ function auto_check(){
 
 //Окрашивание активных клавиш в зависимости от стадии игры
 function button_coloring() {
+    if (bet_maked) {
+        $('#start').attr('class','w-100 button_active')
+        $('#bet1').attr('class','button_inactive')
+        $('#bet2').attr('class','button_inactive')
+        $('#bet3').attr('class','button_inactive')
+        $('#make_bet').attr('class','button_inactive')
+    }
     if (comp_move_maked) {
         $('#start').attr('class','w-100 button_inactive')
         $('#make_move').attr('class','w-100 button_active')
@@ -161,6 +176,36 @@ function end_move() {
     }
 }
 
+//Ставки
+
+function bet_number(i) {
+    if (!bet_maked) {
+        switch (i) {
+            case 1: $('#bet').val(bet1); break;
+            case 2: $('#bet').val(bet2); break;
+            case 3: $('#bet').val(gamer_money); break;
+        }
+    }
+}
+
+function make_bet() {
+    let g = Number($('#bet').val())
+    if (($('#bet').val().match(/^\d+$/) != null) & (g <= gamer_money) & (g > 0) & (!bet_maked)) {
+        let c = Math.floor(Math.random() * (Math.abs(comp_money - g) + 1)) + g
+        bank = g + c
+        gamer_money-=g
+        comp_money-=c
+        $('#bank').text(bank)
+        $('#gamer_money').text(gamer_money)
+        $('#comp_money').text(comp_money)
+        $('#bet').val(0)
+        bet_maked = true
+        $('#ask_for_bet1').text('Ставка сделана')
+        $('#ask_for_bet2').text('Ставка сделана')
+        button_coloring()
+    }
+}
+
 //Обработка кнопок
 $('#start').click(start)
 $('#make_move').click(make_move)
@@ -170,3 +215,10 @@ $('#change3').click(function (){change_dice(3)})
 $('#end_move').click(end_move)
 
 
+$('#bet1').click(function (){bet_number(1)})
+$('#bet2').click(function (){bet_number(2)})
+$('#bet3').click(function (){bet_number(3)})
+
+$('#make_bet').click(make_bet)
+
+$(document).ready($('#bet').val(0))
